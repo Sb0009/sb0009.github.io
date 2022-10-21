@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DrDoggy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#menu"><img src="img/arrow-up.png" id="ancre" /></a>
+    <header>
+        <div id="connexion">
+            <a href="contact.html">Contact</a>
+            <a href="connexion.html">Patient Already?</a>
+            <a href="inscription.html">Sign_Up</a>
+        </div>
+        <div id="recherche">
+            <form action="#" method="post">
+                <input type="search" name="recherche" value="" placeholder="Rechercher un tuto">
+                <input type="submit" name="submit" value="rechercher">
+            </form>
+
+        </div>
+    </header>
+    <nav>
+        <div id="menu">
+            <ul>
+                <a href="index.html">
+                    <li>Welcome at Dr Doggy </li>
+                </a>
+                <li>All Doctors </li>
+                <li>All Cities</li>
+                <li>All Specialities</li>
+
+            </ul>
+        </div>
+
+    </nav>
+    <main>
+        <h1>Dr Doggy app </h1>
+        <div id="video">
+            <video control="controls muted" src="video/montage.mp4" autoplay="true" loop="loop">
+            </video>
+        </div>
+        <div id="blog">
+            <article>
+                <h4>Pain killa </h4>
+                <img src="img/montage1.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam purus risus, dignissim non lectus eu,
+                    placerat tempor magna. Aliquam lacinia dui eu risus dapibus efficitur.</p>
+            </article>
+            <article>
+                <h4>Staff</h4>
+                <img src="img/montage2.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam purus risus, dignissim non lectus eu,
+                    placerat tempor magna. Aliquam lacinia dui eu risus dapibus efficitur.</p>
+            </article>
+            <article>
+                <h4> Dr Doggy ,How it works ?<localisation-></localisation->
+                </h4>
+                <img src="img/montage3.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam purus risus, dignissim non lectus eu,
+                    placerat tempor magna. Aliquam lacinia dui eu risus dapibus efficitur.</p>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div id="categorie">
+            <h3>Specialities/h3>
+                <ul>
+                    <a href="index.html">
+                        <li>Welcome</li>
+                    </a>
+                    <a href="#">
+                        <li>General Praticioner</li>
+                    </a>
+                    <a href="#">
+                        <li>Cardiologist</li>
+                    </a>
+                    <a href="#">
+                        <li>Urologist</li>
+                    </a>
+                    <a href="#">
+                        <li>Dental Dept</li>
+                    </a>
+                    <a href="#">
+                        <li>Dermatologist</li>
+                    </a>
+                </ul>
+        </div>
+        <div id="compte">
+            <h3>My Account</h3>
+            <ul>
+                <a href="#">
+                    <li>My profile</li>
+                </a>
+                <a href="#">
+                    <li>My rv</li>
+                </a>
+                <a href="#">
+                    <li>My bills</li>
+                </a>
+            </ul>
+        </div>
+        <div>
+            <a href="#"><img src="img/login.png"></a>
+        </div>
+    </footer>
+</body>
+
+</html>
