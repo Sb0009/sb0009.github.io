@@ -1,56 +1,88 @@
-# sb0009.github.io
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
 
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+
+
+
+
+
+  <p><img src="https://user-images.githubusercontent.com/96126445/196426267-ef783879-6172-4ab5-9506-7fd53e41b1b3.png" alt="drdoggy"
+ width="150 px">
+ <img src="https://user-images.githubusercontent.com/96126445/196557250-9c8177e0-7389-42d7-9cf5-c0ff590410c5.png" alt="login" width="150 px">
+  <img src="https://user-images.githubusercontent.com/96126445/196909958-0989cafb-8b15-4c7f-afb5-bb2559b236c5.png" alt="404 error" width="150 px">
+    <img src="https://user-images.githubusercontent.com/96126445/196910946-7d738740-18ad-498a-bb28-97c485d28783.png" alt="exit" width="150 px">
+       <img src="https://user-images.githubusercontent.com/96126445/197511950-7ad91c7e-c485-4351-aab7-6d703288051f.png" alt="signup" width="150 px">
+</p>
+ 
+
+</p> 
+
+
+
+# Full Stack Project
+
+
+
+# DrDoggy
+### An API for  scheduling medical appointment platform built with Ruby on Rails.
+
+
+
+## Technologies
+
+- Ruby on Rails version 7.0.4
+- Ruby 3.1.2 
+- PostgresSQL
+- MVC Pattern
+- Devise
+- Test Driven Development (TDD with rspec and capybara)
+
+## CRUD
+Patients
+/ Doctors
+- Sign up 
+- Sign in
+
+
+
+
+## Endpoints :
+
+| Method | End point    | Public | Action                                 |
+|--------|--------------|--------|----------------------------------------|
+| POST   | sign_in      | True   | Login a registered user                |
+| POST   | sign_up      | True   | Register a new user                    |
+| DELETE | log_out      | False  | Logout a user                          |
+| POST   | doctor       | False  | Admin creates doctor                   |
+| PATCH  | doctor/:id   | False  | Admin edits doctor's details           |
+| DELETE | doctor/:id   | False  | Admin destroy doctor's details         |
+| GET    | doctor       | False  | Fetch all doctor                       |
+| GET    | doctor/:id   | False  | Fetch a specific doctor                |
+| POST   | appointments | False  | scheduling an appointment      NO      |
+| GET    | appointments | False  | Fetch appointments for  NO             |
+| GET    | appointments | False  | Admin fetches all appointments  NO     |
+
+## Deployment 🧧 
+
+[Backend APIs Live Link](https://drdoggy.herokuapp.com/)
+
+[Frontend Live Link](https://drdoggy.herokuapp.com/)
+
+## Getting Started
+
+To get a copy up and running follow these simple example steps:-
+
+- Clone `https://github.com/Sb0009/drdoggy` to your local machine.
+- Run `bundle install` to install dependancies.
+- Run `rails s` to to run the application in development mode.
+- Use postman to test the endpoints.
+
+## Automated Tests
+
+> bundle exec rspec
+## Author
+
+👤 **Siham Badyine**
+
+- Github: [@Sb0009](https://github.com/Sb0009)
+- Linkedin: [Siham Badyine](https://www.linkedin.com/in/siham-badyine/)
