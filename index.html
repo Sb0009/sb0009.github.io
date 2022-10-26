@@ -18,13 +18,11 @@
 
 <div class="card-header bg-white">
   <div class="text-muted">DrDoggy</div>
-  <%= link_to 'Sign up to Dr Doggy', '/sessions/new', class: 'btn btn-block btn-white' %>
+
 </div>
-<div class="col-md-3">
-  <%= link_to 'Member?', '/login',class:  'btn btn-block btn-white' %>
-</div>
-<div class="col-md-3">
-  <%= link_to 'Exit', 'sessions/destroy',class:  'btn btn-block btn-white' %>
+
+
+  
 
 </div>
 <div class="top-hero-wrapper text-center">
@@ -35,11 +33,7 @@
     <div class="row">
       <div class="col-md-offset-3 col-md-3">
         <div class="links">
-          <%= link_to "All Specialities" ,specialities_path %><br>
-          <%= link_to "All Doctors" ,doctors_path %><br>
-          <%= link_to "All Patients" ,patients_path %><br>
-          <%#= link_to "Sign in" , sessions_path %><br>
-          <%#= link_to "Log in" ,sessions_path %>
+            <a href="http://localhost:3000/login" class="btn btn-primary btn-lg">Login</a>
         </div>
       </div>
     </div>
