@@ -1,151 +1,210 @@
 <!DOCTYPE html>
 
 <head>
+
   <meta charset="utf8">
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <title>Dr Doggy Schedule Manager</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
-        media="screen" title="no title">
+    media="screen" title="no title">
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css"
-        media="screen" title="no title">
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" media="screen"
+    title="no title">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.min.css"
-        media="screen" title="no title">
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.min.css" media="screen"
+    title="no title">
+  <script type=text/javascript src=/static/js/manifest.2ae2e69a05c33dfc65f8.js></script>
+  <script type=text/javascript src=/static/js/vendor.62d5272f8b930eff2094.js></script>
+  <script type=text/javascript src=/static/js/app.17c3eec7eb19e4044081.js></script>
+  <title>Schedule Manager</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap-theme.min.css">
 </head>
 
 <body>
 
-<div class="card-header bg-white">
-  <div class="text-muted">DrDoggy</div>
-</div>
+  <div class="card-header bg-white">
+    <div class="text-muted">DrDoggy</div>
+  </div>
 
-<div class="top-hero-wrapper text-center">
-  <div class="container top-hero-container">
-    <h1 class="text-white">WELCOME</h1>
+  <div class="top-hero-wrapper text-center">
+    <div class="container top-hero-container">
+      <h1 class="text-white">WELCOME</h1>
 
-    <h2 class="text-white">DrDoggy is a service to make medical appointment (soon).</h2>
-    <div class="row">
-      <div class="col-md-offset-3 col-md-3">
-        <div class="links">
-          <a href="/users/sign_in" class="btn btn-primary btn-lg">Sign in</a>
+      <h2 class="text-white">DrDoggy is a service to make medical appointment (soon).</h2>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div>
         </div>
       </div>
     </div>
-    <div layout:fragment="dashboard-contents">
-      <form method="post" class="form mt-2" th:object="${doctor}"
-            th:action="@{'/partner/doctors/edit/'+${id}}">
-        <div class="card">
-          <div class="card-header bg-white">
-            <div style="font-size: 20px;" class="ml-1">Add New Doctor</div>
-            <div class="text-muted">Please enter your doctor information</div>
-          </div>
-          <!-- card header -->
 
-          <div class="card-body">
 
-            <div class="container-fluid">
 
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <div class="form-group">
-                    <label>Enter Doctor's name :</label> <input type="text" placeholder="Name"
-                                                                name="name" class="form-control" th:field="*{name}" />
-                  </div>
-                  <div class="column">
-                  </div>
-                  <div class="form-group mt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block
+[...]
 
-                    <label>Enter Doctor's location:</label> <input type="text"
-                                                                   placeholder="Location" name="Location" class="form-control"
-                                                                   th:field="*{location}" />
-                  </div>
-                </div>
-                <!-- first column -->
-                <div class="col-12 col-md-6">
-                  <div class="form-group">
-                    <label>Select Doctor :</label> <select
-                    class="form-control mdb-select md-form" name="doctor"
-                    th:field="*{doctor}">
-                    <option value="Betty"> Betty</option>
-                  </select>
-                  </div>
-                  <div class="form-group">
-                    <label>Enter phone </label>
-                    <div class="phone-list">
-                      <div class="phone-input">
-                        <input type="tel" placeholder="Phone" name="phone1"
-                               th:field="*{phones}" class="form-control" />
+
+
+<body>
+    <div id=app></div>
+   <section layout:fragment=" dashboard-contents">
+              <div class="modal" id="myModal">
+                <div class="row">
+                  <div class="col-lg-3 col-md-2"></div>
+                  <div class="col-lg-6 col-md-8 col-sm-12 col-12 card" style="background-color: white;">
+                    <div>
+                      <div class="container mt-5">
+                        <h4>Add Schedule</h4>
+                        <div>
+                          <form method="post" th:object="${tTable}" th:action="@{/admin/schedules/create}">
+
+                            <div class="form-group">
+                              <label for="sel1">Select Doctor</label> <select class="form-control mdb-select md-form"
+                                name="doctor" id="doctor_option" th:field="*{drdoggy.doctor.id}">
+
+                                <option th:each="drdoggy:${drdoggys}" th:text="${drdoggy.doctor.name}"
+                                  th:value="${drdoggy.doctor.id}"></option>
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="" class="cusLabel"> Select Clinic</label> <input type="text"
+                                class="form-control" placeholder="Degree">
+                            </div>
+                            <div class="form-group">
+                              <label for="" class="cusLabel"> From</label> <input type="time" class="form-control"
+                                placeholder="Enter Start Time">
+                            </div>
+                            <div class="form-group">
+                              <label for="" class="cusLabel"> To</label> <input type="time" class="form-control"
+                                placeholder="Enter End Time">
+                            </div>
+                            <div class="form-group">
+                              <label for="" class="cusLabel">Day Of Week:</label> <select class="custom-select">
+                                <option selected>Day Of Week</option>
+                                <option>Sunday</option>
+                                <option>Monday</option>
+                                <option>Tuesday</option>
+                                <option>Wednesday</option>
+                                <option>Thursday</option>
+                                <option>Friday</option>
+                                <option>Saturday</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <button class="btn btn-outline-success" type="submit">Create</button>
+
+                              <a class="btn btn-outline-danger" data-dismiss="modal">Cancel</a>
+                            </div>
+                          </form>
+                          <!--form end-->
+                        </div>
+                        <!--form div end-->
                       </div>
+                    </div>
+                  </div>
+                  <!--container end-->
+                </div>
+              </div>
+              <div class="container">
+                <h2>
+                  Doctor Schedule &nbsp;<i style='font-size: 24px' class='fal fa-calendar-alt'></i>
+                </h2>
+                <div class="form-group col-6" style="float: right">
+                  <a class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">Create Schedule</a>
+                </div>
+                <div class="container-fluid">
+                </div>
+                <div class="tab-content">
+                  <div class="row mx-3 mt-3 container tab-pane active" id="clinicA">
+
+                    <div class="row" id="search-bar">
+
+                      <div id="search-doctor">
+                        <input type="text" placeholder="Search doctor..." class="form-control form-rounded" size="35">
+
+                      </div>
+                      <div id="btn-circle-search">
+                        <button type="submit" class="btn  btn-circle">
+                          <i class="fa fa-search" style="color: white"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                      <table class="table table-bordered mt-3" id="ChitTable">
+                        <thead class="thead-danger">
+
+                          <tr class="table-info">
+
+                            <th class="text-center">No</th>
+                            <th class="text-center">Doctor</th>
+                            <th class="text-center">Clinic</th>
+
+
+                            <th class="text-center">To</th>
+                            <th class="text-center">From</th>
+                            <th class="text-center">Action</th>
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+
+                          <!--            <tr th:each="tt : ${timetables}">-->
+                          <td class="text-center" th:text="${tt.drdoggy.doctor.id}"></td>
+                          <td class="text-center" th:text="${tt.drdoggy.doctor.name}"></td>
+                          <td class="text-center" th:text="${tt.drdoggy.clinic.name}"></td>
+                          <td class="text-center" th:text="${tt.to}"></td>
+                          <td></td>
+                          <td></td>
+                          <td class="text-center">
+                            <div class="dropdown">
+                              <a href="#" class="action-icon dropdown-toggle-split" data-toggle="dropdown"
+                                aria-expanded="true"><i class="fas fa-ellipsis-h"></i></a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#"
+                                  th:href="@{'/admin/doctors/edit/'+${tt.drdoggy.doctor.id}}"><i
+                                    class="	fas fa-edit"></i> Edit</a> <a class="dropdown-item" href="#"
+                                  th:href="@{'admin/doctors/delete/'+${tt.drdoggy.doctor.id}}">
+                                  <i class="fas fa-trash"></i> Delete
+                                </a> <a class="dropdown-item" href="#" th:href="@{/doctors/details/1}"><i
+                                    class="	fas fa-ellipsis-v"></i> Detail</a>
+                              </div>
+                            </div>
+                          </td>
+                          </tr>
+                        </tbody>
+
+                      </table>
                     </div>
                   </div>
 
                 </div>
-                <!-- second column -->
               </div>
-              <!-- row -->
-            </div>
-            <!-- container-fluid -->
-          </div>
-          <!-- card body -->
-          <div class="form-group">
-            <div class="card-footer text-right bg-transparent">
-              <a class="btn btn-outline-success " href="#" th:href="@{/doctors/1}"
-                 role="button">Cancel</a>
-              &nbsp;&nbsp;<button class="btn btn-outline-success" href="#" th:href="@{/doctors/show}"
-                                  type="submit" role="button">Submit</button>
-            </div>
-          </div>
-          <!-- card -->
-        </div>
-      </form>
-
-      <script>
-          $(document.body).on('click', '.btn-remove-phone', function () {
-              $(this).closest('.phone-input').remove();
-          });
-
-          $('.btn-add-phone')
-              .on(
-                  'click',
-                  function () {
-                      var index = $('.phone-input').length + 1;
-                      $('.phone-list')
-                          .append(
-                              ''
-                              + '<div class="container-fluid phone-input">'
-                              + '<div class="row">'
-                              + '<input type="tel" placeholder="Phone" name="phone' + index + '" class="mt-1 col-11 form-control"/>'
-                              + '<button type="button" class="ml-1 btn btn-outline-danger mt-1 btn-remove-phone"><i class="fal fa-times"></i></button>'
-                              + '</div></div>');
-                  });
-
-          $(document.body).on('click', '.btn-remove-email', function () {
-              $(this).closest('.email-input').remove();
-          });
-
-          $('.btn-add-email')
-              .on(
-                  'click',
-                  function () {
-                      var index = $('.email-input').length + 1;
-                      $('.email-list')
-                          .append(
-                              ''
-                              + '<div class="container-fluid email-input">'
-                              + '<div class="row">'
-                              + '<input type="email" placeholder="Email" name="mail' + index + '" class="mt-1 col-11 form-control"/>'
-                              + '<button type="button" class="ml-1 btn btn-outline-danger mt-1 btn-remove-email"><i class="fal fa-times"></i></button>'
-                              + '</div></div>');
-                  });
-      </script>
-
-    </div>
-
-
-
-
-
-
-</div>
-</body>
+              <script>
+              </script>
+              </section>
+              <!-- /.content -->
+              <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+              <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+              <script type="text/javascript"
+                src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+              <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+              <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+            
+              <script>
+              <script src="js/rails7Controller.js">
+              </script> <script src=""></script>
